@@ -20,21 +20,22 @@ function Homepage() {
 
    const {addToBasket} = useContext(CartContext)
 
+
     const handleAdd = (x) => {
 
         addToBasket(x)
 
-        console.log(x)
+       console.log(x)
 
     }
 
     return (
         <Box bg="#f4eae3">
-            <Wrap pt="100px" justify="space-evenly" >
+            <Wrap pt="100px"  justify="space-evenly" >
 
                 {products && products.map((items) => {
                     return (
-                        <Card maxW='300px' mt="70px"  >
+                        <Card key={items.id} maxW='300px' mt="70px"  >
                             <CardBody >
                                 <Image
                                     src={items.image}

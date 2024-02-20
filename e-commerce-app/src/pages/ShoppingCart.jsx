@@ -1,26 +1,21 @@
 import { Box } from "@chakra-ui/react";
-import { useState, useReducer, useContext } from 'react'
+import { useContext } from 'react'
 
-import Homepage from "./Homepage";
 import {CartContext} from "../context_reducer/CartContext";
 
 
 
 function ShoppingCart () {
-    const [productsCart, setProductsCart] = useState([])
-
-    const {products} = useContext(CartContext)
+    
+    const {products, total} = useContext(CartContext)
     console.log(products)
 
 
     return (
-        <Box mt="500px">
-            {products.map((item)=> {
-                {item.name}
-            })}
+        <Box mt="400px">
+            <p>total : {total} </p>
+            {products}
         </Box>
-    )
-
+    );
 }
-
 export default ShoppingCart
