@@ -1,8 +1,8 @@
 import { Box, Badge, Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button, Wrap } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { MdAddShoppingCart } from "react-icons/md"
-
+import CartContext from "../context_reducer/CartContext";
 
 
 const API_URL = "http://localhost:3245"
@@ -17,6 +17,14 @@ function Homepage() {
             .catch((error) => console.log(error))
 
     }, [])
+
+    const {addToBasket} = useContext(CartContext)
+
+    const handleAdd = () => {
+
+        addToBasket(products)
+
+    }
 
     return (
         <Box bg="#f4eae3">
@@ -48,7 +56,7 @@ function Homepage() {
                                     {/* <Button variant='solid' colorScheme='gray'>
                                         Buy now
                                     </Button> */}
-                                    <Button variant='solid' leftIcon={<MdAddShoppingCart />} colorScheme='gray'>
+                                    <Button onClick= {handleAdd} variant='solid' leftIcon={<MdAddShoppingCart />} colorScheme='gray'>
                                         Add to cart
                                     </Button>
                                 </ButtonGroup>
