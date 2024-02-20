@@ -20,7 +20,7 @@ export const CartProvider = (props) => {
         
     }
 
-    const value = { addToBasket }
+    const value = { addToBasket, products: state.products }
 
     return <CartContext.Provider value={value}> {props.children} </CartContext.Provider>
 }

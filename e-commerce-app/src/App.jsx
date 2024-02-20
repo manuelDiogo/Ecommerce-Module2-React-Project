@@ -19,7 +19,6 @@ import './App.css'
 
 function App() {
 
-
   return (
     
       <CartProvider>
@@ -43,7 +42,6 @@ function App() {
         <Footer />
       </CartProvider>
   
-
   );
 }
 
