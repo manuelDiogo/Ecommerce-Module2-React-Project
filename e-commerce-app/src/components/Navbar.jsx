@@ -44,7 +44,18 @@ function Navbar() {
                 >
                     shop
                 </ChakraLink>
-
+                <ChakraLink
+                fontSize="30px"
+               
+                    as={ReactRouterLink}
+                    to="/cart"
+                    mr="34px"
+                    color="black"
+                    fontWeight='bold'
+                    _hover={{ textDecoration: "none", color: "gray.500" }}
+                >
+                    cart
+                </ChakraLink>
                 
             </Flex>
         </Flex>

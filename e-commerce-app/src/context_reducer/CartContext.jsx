@@ -10,17 +10,17 @@ export const CartProvider = (props) => {
 
     const addToBasket = (product) => {
 
-        const updatedBasket = state.products
+        const updatedBasket = state.pro
         updatedBasket.push(product)
-
+//console.log(updatedBasket)
         dispatch({
             type: "add",
-            payload: updatedBasket
+            product: updatedBasket
         })
         
     }
 
-    const value = { addToBasket, products: "hello", total: state.total }
+    const value = { addToBasket, pro: state.pro, total: state.total }
 
     return <CartContext.Provider value={value}> {props.children} </CartContext.Provider>
 }

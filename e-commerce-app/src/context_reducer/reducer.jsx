@@ -2,27 +2,28 @@
 
 export const initialState = {
     total: 0,
-    products: []
+    pro: []
 }
 
 const storeReducer = (state, action) => {
+    //console.log(state)
+   // console.log(action)
     switch (action.type) {
         case "add":
             return {
-                ...state, products: action.payload
+                ...state, pro: action.product
             }
 
         case "remove":
             return {
-                ...state, products: action.payload
+                ...state, pro: action.product
             }
 
         case "update price":
             return {
-                ...state, products: action.payload
+                ...state, pro: action.product
             }
 
-        default: throw Error("error")
     }
 }
 

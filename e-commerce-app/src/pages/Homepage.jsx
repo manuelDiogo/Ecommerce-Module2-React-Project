@@ -18,14 +18,14 @@ function Homepage() {
 
     }, [])
 
-   const {addToBasket} = useContext(CartContext)
+   const {addToBasket , pro} = useContext(CartContext)
 
-
+   console.log(pro)
     const handleAdd = (x) => {
 
         addToBasket(x)
 
-       console.log(x)
+       //console.log(x)
 
     }
 
