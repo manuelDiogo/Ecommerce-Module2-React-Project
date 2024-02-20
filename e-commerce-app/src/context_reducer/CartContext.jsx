@@ -20,7 +20,21 @@ export const CartProvider = (props) => {
         
     }
 
-    const value = { addToBasket, pro: state.pro, total: state.total }
+    const removeFromBasket = (product) => {
+
+        const updatedBasket = state.pro.filter((currValue) => {
+            currValue.id !== product
+            console.log(currValue.id)
+        })
+//console.log(updatedBasket)
+        dispatch({
+            type: "remove",
+            product: updatedBasket
+        })
+        
+    }
+
+    const value = { addToBasket, removeFromBasket, pro: state.pro, total: state.total }
 
     return <CartContext.Provider value={value}> {props.children} </CartContext.Provider>
 }

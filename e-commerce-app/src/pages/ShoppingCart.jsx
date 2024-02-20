@@ -9,10 +9,19 @@ import { CartContext } from "../context_reducer/CartContext";
 function ShoppingCart() {
 
 
-    const { pro } = useContext(CartContext)
-    console.log(pro)
+    const { pro, removeFromBasket } = useContext(CartContext)
+
+    const handleDelete = (id) => {
+
+        removeFromBasket(id)
+
+        //console.log(x)
+
+    }
+    //console.log(pro)
     return (
-        pro.map((items) => {
+        <Box>
+      {pro && pro.map((items) => {
             return (
                 <Card key={items.id} maxW='300px' mt="70px"  >
                     <CardBody >
@@ -30,6 +39,9 @@ function ShoppingCart() {
                             >
                                 {items.category}
                             </Badge>
+                            <Button onClick={() => handleDelete(items.id)} variant='solid' colorScheme='red'>
+                                Remove from cart
+                            </Button>
                         </Stack>
                     </CardBody>
                     <Divider />
@@ -38,8 +50,10 @@ function ShoppingCart() {
                     </CardFooter>
                 </Card>
             )
-        }
-        )
-        )
+         }
+
+        )}
+        </Box>
+    )
 }
 export default ShoppingCart

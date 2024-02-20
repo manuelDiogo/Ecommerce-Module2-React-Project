@@ -16,18 +16,12 @@ import {
 
 import { FaLinkedin, FaGithub } from "react-icons/fa"
 
-import {CartContext} from "../context_reducer/CartContext";
-import { useContext, useEffect} from 'react'
+
 
 function About() {
 
-    const {addToBasket, total , pro} = useContext(CartContext)
-    console.log(pro)
     return (
         <Box display="flex" mt="50px" justifyContent="center">
-            {pro && pro.map((a) => {
-               <p> {a.description}</p>
-            })}
             <Box
                 display="flex"
                 gap="50px"
