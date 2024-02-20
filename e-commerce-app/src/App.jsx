@@ -10,7 +10,7 @@ import Error from "./pages/Error";
 import Homepage from './pages/Homepage';
 import Landingpage from './pages/Landingpage';
 import ProductDetails from './pages/ProductDetails';
-import CartContext from './context_reducer/CartContext';
+import {CartProvider} from './context_reducer/CartContext';
 import ShoppingCart from './pages/ShoppingCart';
 
 
@@ -21,8 +21,8 @@ function App() {
 
 
   return (
-    <div className="all" >
-      <CartContext.Provider value={value}>
+    
+      <CartProvider>
         <Navbar />
         <Routes>
 
@@ -41,8 +41,8 @@ function App() {
 
         </Routes>
         <Footer />
-      </CartContext.Provider>
-    </div>
+      </CartProvider>
+  
 
   );
 }

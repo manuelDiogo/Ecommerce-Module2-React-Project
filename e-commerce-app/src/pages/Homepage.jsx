@@ -18,13 +18,13 @@ function Homepage() {
 
     }, [])
 
-    const {addToBasket} = useContext(CartContext)
+   /* const {addToBasket} = useContext(CartContext)
 
     const handleAdd = () => {
 
         addToBasket(products)
 
-    }
+    }*/
 
     return (
         <Box bg="#f4eae3">
