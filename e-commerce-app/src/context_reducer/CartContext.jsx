@@ -1,18 +1,22 @@
 import { useReducer, createContext } from "react";
-import reducer ,{ initialState } from "./reducer"
+import reducer from "./reducer"
 
 
-export const CartContext = createContext()
+const CartContext = createContext()
 
 export const CartProvider = (props) => {
 
-    const [state, dispatch] = useReducer(reducer, initialState)
+    const [state, dispatch] = useReducer(reducer, {
+        total: 0,
+        pro: []
+    })
 
     const addToBasket = (product) => {
 
         const updatedBasket = state.pro
         updatedBasket.push(product)
 //console.log(updatedBasket)
+        updatePrice(updatedBasket)
         dispatch({
             type: "add",
             product: updatedBasket
@@ -22,14 +26,30 @@ export const CartProvider = (props) => {
 
     const removeFromBasket = (product) => {
 
-        const updatedBasket = state.pro.filter((currValue) => {
-            currValue.id !== product
-            console.log(currValue.id)
-        })
+        const updatedBasket = state.pro.filter((currValue) => 
+            currValue.id != product.id
+           // console.log(currValue.id)
+        )
 //console.log(updatedBasket)
+        updatePrice(updatedBasket)
         dispatch({
             type: "remove",
             product: updatedBasket
+        })
+        
+    }
+
+    const updatePrice = (product) => {
+        let total = 0
+        const updatedBasket = product.forEach((products) => {
+            total += products.price
+           
+        })
+        console.log(total)
+//console.log(updatedBasket)
+        dispatch({
+            type: "update price",
+            product: total
         })
         
     }

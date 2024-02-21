@@ -18,21 +18,15 @@ function Homepage() {
 
     }, [])
 
-   const {addToBasket , pro} = useContext(CartContext)
+   const {addToBasket} = useContext(CartContext)
 
-   console.log(pro)
-    const handleAdd = (x) => {
-
-        addToBasket(x)
-
-       //console.log(x)
-
-    }
+   //console.log(pro)
+  
 
     return (
         <Box bg="#f4eae3">
             <Wrap pt="100px"  justify="space-evenly" >
-
+          
                 {products && products.map((items) => {
                     return (
                         <Card key={items.id} maxW='300px' mt="70px"  >
@@ -59,7 +53,7 @@ function Homepage() {
                                     {/* <Button variant='solid' colorScheme='gray'>
                                         Buy now
                                     </Button> */}
-                                    <Button onClick= {() => handleAdd(items)} variant='solid' leftIcon={<MdAddShoppingCart />} colorScheme='gray'>
+                                    <Button onClick= {() => addToBasket(items)} variant='solid' leftIcon={<MdAddShoppingCart />} colorScheme='gray'>
                                         Add to cart
                                     </Button>
                                 </ButtonGroup>

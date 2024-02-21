@@ -1,11 +1,6 @@
 
 
-export const initialState = {
-    total: 0,
-    pro: []
-}
-
-const storeReducer = (state, action) => {
+const reducer = (state, action) => {
     //console.log(state)
    // console.log(action)
     switch (action.type) {
@@ -21,10 +16,10 @@ const storeReducer = (state, action) => {
 
         case "update price":
             return {
-                ...state, pro: action.product
+                ...state, total: action.product
             }
 
     }
 }
 
-export default storeReducer;
+export default reducer;

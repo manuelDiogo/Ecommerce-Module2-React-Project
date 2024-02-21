@@ -1,29 +1,27 @@
 
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 
 import { Box, Badge, Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button, Wrap } from "@chakra-ui/react";
 
-import { CartContext } from "../context_reducer/CartContext";
+import CartContext from "../context_reducer/CartContext";
 
 
 function ShoppingCart() {
 
 
-    const { pro, removeFromBasket } = useContext(CartContext)
+    const { pro, removeFromBasket, total } = useContext(CartContext)
+   // console.log(total)
+   // console.log(pro)
 
-    const handleDelete = (id) => {
 
-        removeFromBasket(id)
-
-        //console.log(x)
-
-    }
     //console.log(pro)
     return (
-        <Box>
+        <Box mt="300px">
+            <h3 >Your total is: {total}</h3>
       {pro && pro.map((items) => {
-            return (
-                <Card key={items.id} maxW='300px' mt="70px"  >
+           
+           return (
+            <Card key={items.id} maxW='300px' mt="70px"  >
                     <CardBody >
                         <Image
                             src={items.image}
@@ -39,7 +37,7 @@ function ShoppingCart() {
                             >
                                 {items.category}
                             </Badge>
-                            <Button onClick={() => handleDelete(items.id)} variant='solid' colorScheme='red'>
+                            <Button onClick={() => removeFromBasket(items)} variant='solid' colorScheme='red'>
                                 Remove from cart
                             </Button>
                         </Stack>
@@ -48,11 +46,13 @@ function ShoppingCart() {
                     <CardFooter>
 
                     </CardFooter>
-                </Card>
+                    </Card>
             )
+           
          }
 
         )}
+        
         </Box>
     )
 }
