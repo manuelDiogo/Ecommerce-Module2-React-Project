@@ -5,7 +5,7 @@ import axios from "axios";
 import { Box, Badge, Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button, Wrap } from "@chakra-ui/react";
 
 
-const API_URL = "http://localhost:3245"
+const API_URL = "https://reactprojectbackendservermodule2.onrender.com/ "
 
 
 function SearchPage() {

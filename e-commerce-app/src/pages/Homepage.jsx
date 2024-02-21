@@ -6,7 +6,7 @@ import CartContext from "../context_reducer/CartContext";
 import { Link } from "react-router-dom";
 
 
-const API_URL = "http://localhost:3245"
+const API_URL = "https://reactprojectbackendservermodule2.onrender.com/"
 
 function Homepage() {
 
