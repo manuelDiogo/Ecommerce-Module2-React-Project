@@ -13,7 +13,7 @@ function Navbar() {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        navigate(`/search/${search}`)
+        navigate({pathname: "/search", search: `?searchedProducts=${search}`})
         setSearch("")
     }
 

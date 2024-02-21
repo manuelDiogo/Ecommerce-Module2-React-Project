@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { MdAddShoppingCart } from "react-icons/md"
 import CartContext from "../context_reducer/CartContext";
+import { Link } from "react-router-dom";
 
 
 const API_URL = "http://localhost:3245"
@@ -50,12 +51,14 @@ function Homepage() {
                             <Divider />
                             <CardFooter>
                                 <ButtonGroup spacing='2'>
-                                    {/* <Button variant='solid' colorScheme='gray'>
-                                        Buy now
-                                    </Button> */}
                                     <Button onClick= {() => addToBasket(items)} variant='solid' leftIcon={<MdAddShoppingCart />} colorScheme='gray'>
                                         Add to cart
                                     </Button>
+                                    <Link to={`/details/${items.id}`}>
+                                    <Button variant='solid' leftIcon={<MdAddShoppingCart />} colorScheme='blue'>
+                                        details
+                                    </Button>
+                                    </Link>
                                 </ButtonGroup>
                             </CardFooter>
                         </Card>

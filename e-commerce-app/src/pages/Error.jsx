@@ -5,7 +5,7 @@ function Error () {
 
     return (
         
-            <Box>ERROR</Box>
+            <Box mt="200px">ERROR</Box>
 
     )
 
