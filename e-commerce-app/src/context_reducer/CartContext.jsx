@@ -15,7 +15,7 @@ export const CartProvider = (props) => {
 
         const updatedBasket = state.pro
         updatedBasket.push(product)
-//console.log(updatedBasket)
+
         updatePrice(updatedBasket)
         dispatch({
             type: "add",
@@ -28,9 +28,9 @@ export const CartProvider = (props) => {
 
         const updatedBasket = state.pro.filter((currValue) => 
             currValue.id != product.id
-           // console.log(currValue.id)
+           
         )
-//console.log(updatedBasket)
+
         updatePrice(updatedBasket)
         dispatch({
             type: "remove",
@@ -46,7 +46,7 @@ export const CartProvider = (props) => {
            
         })
         console.log(total)
-//console.log(updatedBasket)
+
         dispatch({
             type: "update price",
             product: total

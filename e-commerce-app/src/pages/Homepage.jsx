@@ -21,7 +21,7 @@ function Homepage() {
 
    const {addToBasket} = useContext(CartContext)
 
-   //console.log(pro)
+   
   
 
     return (
