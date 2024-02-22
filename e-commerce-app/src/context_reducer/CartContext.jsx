@@ -54,6 +54,8 @@ export const CartProvider = (props) => {
         
     }
 
+    
+
     const value = { addToBasket, removeFromBasket, pro: state.pro, total: state.total }
 
     return <CartContext.Provider value={value}> {props.children} </CartContext.Provider>

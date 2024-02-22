@@ -1,4 +1,4 @@
-import { Box, CardBody, Button, Image, Card, Stack, Heading, Text, Badge, Divider, CardFooter, ButtonGroup, Wrap, FormControl, FormLabel, Input, FormHelperText,  } from "@chakra-ui/react";
+import { Box, CardBody, Button, Image, Card, Stack, Heading, Text, Badge, Divider, CardFooter, ButtonGroup, Wrap, FormControl, FormLabel, Input, FormHelperText, } from "@chakra-ui/react";
 import { useEffect, useState, useContext } from "react";
 import CartContext from "../context_reducer/CartContext";
 import { MdAddShoppingCart } from "react-icons/md"
@@ -6,14 +6,21 @@ import { MdAddShoppingCart } from "react-icons/md"
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-const API_URL = "https://reactprojectbackendservermodule2.onrender.com/"
+const API_URL = "https://reactprojectbackendservermodule2.onrender.com"
 
 function ProductDetails() {
+
+    const [review, setReview] = useState("");
+
     const { addToBasket } = useContext(CartContext)
 
     const { id } = useParams()
 
     const [productsDet, setProductsDet] = useState([])
+
+    const addReview = () => {
+        setReview(newReview)
+    }
 
     const prodFind = productsDet.find(
         (product) => product.id == id
@@ -60,6 +67,16 @@ function ProductDetails() {
                             <Button onClick={() => addToBasket(prodFind)} variant='solid' leftIcon={<MdAddShoppingCart />} colorScheme='gray'>
                                 Add to cart
                             </Button>
+
+                            {/* <input
+                                type="text"
+                                required
+                                value={newReview}
+                                onChange={(e) => setReview(e.target.value)}
+                                placeholder="Enter review"
+                            />
+                            <button className="addRevBtn" onClick={addReview}>Submit</button> */}
+                            
                             {/* <FormControl isInvalid={isError}>
                                 <FormLabel>Email</FormLabel>
                                 <Input type='email' value={input} onChange={handleInputChange} />
