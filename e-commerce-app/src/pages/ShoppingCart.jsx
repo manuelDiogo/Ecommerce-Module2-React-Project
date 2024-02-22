@@ -6,6 +6,8 @@ import { Box, Badge, Card, CardBody, Image, Stack, Heading, Text, Divider, CardF
 import CartContext from "../context_reducer/CartContext";
 
 
+import background from "../assets/background.png"
+
 function ShoppingCart() {
 
 
@@ -16,15 +18,14 @@ function ShoppingCart() {
     //console.log(pro)
 
     return (
-        <Box bg="#f4eae3" minHeight="100vh" pt="130px" pb="45px" width="100%" overflowY="scroll" >
+        <Box bgImage={background}  minHeight="100vh" pt="80px" pb="45px" width="100%" overflowY="scroll" >
             <Card position="fixed" width="100vw" fontSize='l' fontWeight='bold' zIndex="999" textAlign="center">
                 your total:
                 <Badge ml='1' colorScheme='teal' fontSize='2xl'>
                     {total}€
                 </Badge>
             </Card>
-
-            <Flex flexWrap= "wrap" justifyContent="flex-start" mt="70px" pl="60px">
+            <Flex flexWrap="wrap" justifyContent="flex-start" mt="70px" pl="60px">
                 {pro && pro.map((items) => {
                     return (
 
@@ -36,12 +37,12 @@ function ShoppingCart() {
                             mr="60px"
                             mb="10px"
 
-                            
+
                         >
                             <Image
                                 objectFit='cover'
-                                maxW={{ base: '100%', sm: '200px' }}
-                                maxH={{ base: '100%', sm: '200px' }}
+
+                                boxSize="200px"
                                 src={items.image}
                                 alt="image"
                             />
@@ -50,11 +51,11 @@ function ShoppingCart() {
                                 <CardBody>
                                     <Heading size='md'>{items.name}</Heading>
 
-                                    <Text py='2'>
+                                    <Text >
                                         {items.price}€
                                     </Text>
                                 </CardBody>
-                                
+
 
                                 <CardFooter>
                                     <Button onClick={() => removeFromBasket(items)} variant='solid' colorScheme='red'>
@@ -76,3 +77,6 @@ function ShoppingCart() {
     )
 }
 export default ShoppingCart
+
+
+// bg="#f4eae3"

@@ -18,7 +18,7 @@ function Footer() {
                 justifyContent="flex-start"
                 
             >
-         ©STORENAME
+         ©PM-STORE
         </Flex>
     )
 }

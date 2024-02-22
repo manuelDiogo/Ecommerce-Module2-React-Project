@@ -7,6 +7,8 @@ import { Text, Flex, Box, FormControl, FormLabel, Input, Button, Badge, Icon, Dr
 import { useContext, useState } from 'react'
 import CartContext from "../context_reducer/CartContext";
 import { FaSearch } from "react-icons/fa"
+import { Link } from "react-router-dom";
+
 function Navbar() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = useRef()
@@ -20,7 +22,7 @@ function Navbar() {
     }
     return (
         <div>
-            <Flex
+            <Flex 
                 position="fixed"
                 top="0"
                 left="0"
@@ -32,17 +34,26 @@ function Navbar() {
                 justifyContent="space-between"
                 alignItems="center"
             >
-                <Box display="flex" mt="10px" ml="20px">
-                    <Icon as={FaShopify} boxSize={14} />
-                    <Text
-                        fontSize="30px"
-                        ml="5px"
-                        color="black"
-                        fontWeight='bold'
-                        _hover={{ textDecoration: "none", color: "gray.500" }}
-                    >
-                        E-COMMERCE
-                    </Text>
+                <Box display="flex" mt="10px" ml="20px" alignItems="center">
+                    
+                   
+                <Link to={"/"}>
+                    <Flex alignItems="center">
+                        <Icon as={FaShopify} boxSize={14}  />
+                        
+                        <Text
+                            fontSize="30px"
+                            ml="5px"
+                            color="black"
+                            fontWeight='bold'
+                            
+                        >
+                            PM-STORE
+                        </Text>
+                        
+                    </Flex>
+                    </Link>
+                    
                 </Box>
                 <Box p="2" display="flex" flexDirection="column" justifyContent="center"></Box>
                 <Flex width="50%" justifyContent="space-between">

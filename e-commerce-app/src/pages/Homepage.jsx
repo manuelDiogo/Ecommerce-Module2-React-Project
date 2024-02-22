@@ -35,14 +35,15 @@ function Homepage() {
                     return (
                         <Card key={items.id} maxW='300px' mt="70px"  >
                             <CardBody >
-                                <Box height="300px">
+                                
                                 <Image
                                     src={items.image}
                                     borderRadius='lg'
-                                    maxH="290px"
+                                    objectFit="cover"
+                                    boxSize="250px"
                                    
                                 />
-                                </Box>
+                             
                                 <Stack mt='6' spacing='3'>
                                     <Heading size='md'>{items.name}</Heading>
 
