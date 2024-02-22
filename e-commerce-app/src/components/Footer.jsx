@@ -1,10 +1,25 @@
 
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 
-function Footer () {
+
+function Footer() {
 
     return (
-        <Box> FOOTERLorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur dolor facilis culpa? Tempora in hic unde maxime nemo at adipisci officiis saepe, recusandae alias delectus sint laborum dolorem corporis voluptatum.</Box>
+        <Flex
+                height= "35px"
+                bottom="0"
+                left="0"
+                right="0"
+                zIndex="999"
+                p={2}
+                bg="#f4eae3"
+                color="teal"
+                position= "fixed"
+                justifyContent="flex-start"
+                
+            >
+         ©STORENAME
+        </Flex>
     )
 }
 

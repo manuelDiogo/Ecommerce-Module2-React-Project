@@ -8,7 +8,9 @@ import { Link } from "react-router-dom";
 
 
 
-const API_URL = "https://reactprojectbackendservermodule2.onrender.com"
+// const API_URL = "https://reactprojectbackendservermodule2.onrender.com"
+
+const API_URL = "http://localhost:3245"
 
 function Homepage() {
 
@@ -25,9 +27,8 @@ function Homepage() {
 
    
   
-
     return (
-        <Box bg="#f4eae3">
+        <Box bg="#f4eae3" pb="45px">
             <Wrap pt="100px"  justify="space-evenly" >
           
                 {products && products.map((items) => {

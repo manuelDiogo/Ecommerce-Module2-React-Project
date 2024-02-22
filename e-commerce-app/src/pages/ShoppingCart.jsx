@@ -10,50 +10,89 @@ function ShoppingCart() {
 
 
     const { pro, removeFromBasket, total } = useContext(CartContext)
-   // console.log(total)
-   // console.log(pro)
 
-
+    // console.log(total)
+    // console.log(pro)
     //console.log(pro)
+
     return (
-        <Box mt="300px">
-            <h3 >Your total is: {total}</h3>
-      {pro && pro.map((items) => {
-           
-           return (
-            <Card key={items.id} maxW='300px' mt="70px"  >
-                    <CardBody >
-                        <Image
-                            src={items.image}
-                            borderRadius='lg'
-                        />
-                        <Stack mt='6' spacing='3'>
-                            <Heading size='md'>{items.name}</Heading>
+        <Box bg="#f4eae3" minHeight="100vh" pt="130px" pb="45px" width="100%" overflowY="scroll" >
+            <Card position="fixed" width="100vw" fontSize='l' fontWeight='bold' zIndex="999" textAlign="center">
+                your total:
+                <Badge ml='1' colorScheme='teal' fontSize='2xl'>
+                    {total}€
+                </Badge>
+            </Card>
 
-                            <Text color='black' fontSize='2xl'>
-                                {items.price}€
-                            </Text>
-                            <Badge
-                            >
-                                {items.category}
-                            </Badge>
-                            <Button onClick={() => removeFromBasket(items)} variant='solid' colorScheme='red'>
-                                Remove from cart
-                            </Button>
-                        </Stack>
-                    </CardBody>
-                    <Divider />
-                    <CardFooter>
+            <Wrap justify="space-evenly" mt="70px">
+                {pro && pro.map((items) => {
+                    return (
 
-                    </CardFooter>
-                    </Card>
-            )
-           
-         }
+                        < Card
+                            direction={{ base: 'column', sm: 'row' }}
+                            maxW="400px"
+                            overflow='hidden'
+                            variant='outline'
+                            
+                        >
+                            <Image
+                                objectFit='cover'
+                                maxW={{ base: '100%', sm: '200px' }}
+                                maxH={{ base: '100%', sm: '200px' }}
+                                src={items.image}
+                                alt="image"
+                            />
 
-        )}
-        
+                            <Stack>
+                                <CardBody>
+                                    <Heading size='md'>{items.name}</Heading>
+
+                                    <Text py='2'>
+                                        {items.price}€
+                                    </Text>
+                                </CardBody>
+                                
+
+                                <CardFooter>
+                                    <Button onClick={() => removeFromBasket(items)} variant='solid' colorScheme='red'>
+                                        Remove from cart
+                                    </Button>
+                                </CardFooter>
+                            </Stack>
+                        </Card >
+
+
+                    )
+
+                }
+
+                )}
+
+            </Wrap>
         </Box>
     )
 }
 export default ShoppingCart
+
+{/* <Card key={items.id} maxW='300px' mt="70px"  >
+                            <CardBody >
+                                <Image
+                                    src={items.image}
+                                    borderRadius='lg'
+                                />
+                                <Stack mt='6' spacing='3'>
+                                    <Heading size='md'>{items.name}</Heading>
+
+                                    <Text color='black' fontSize='2xl'>
+                                        {items.price}€
+                                    </Text>
+                                    <Badge
+                                    >
+                                        {items.category}
+                                    </Badge>
+                                    <Button onClick={() => removeFromBasket(items)} variant='solid' colorScheme='red'>
+                                        Remove from cart
+                                    </Button>
+                                </Stack>
+                            </CardBody>
+                        </Card> */}

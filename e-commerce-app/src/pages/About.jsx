@@ -16,25 +16,23 @@ import {
 
 import { FaLinkedin, FaGithub } from "react-icons/fa"
 
-
-
 function About() {
 
     return (
-        <Box display="flex" mt="50px" justifyContent="center">
+        <Box display="flex" mt="50px" justifyContent="center" bg="#f4eae3" pb="200px">
             <Box
                 display="flex"
                 gap="50px"
                 mt="200px"
                 justifyContent="center"
-                mb="130px"
+                
             >
                 <Card maxW="lg" maxH="lg">
                     <CardBody>
                         <Stack mt="6" spacing="3">
                             <Heading size="md">Piyush</Heading>
                             <Text>
-                            sgujkhsdhjfghlgkhjlsdkfgjhsidghslkfhsdlkfhlksdhhuiöehwhfohfshfuhfioshfhfjsdfoshfshfsgujkhsdhjfghlgkhjlsdkfgjhsidghslkfhsdlkfhlksdhhuiöehwhfohfshfuhfioshfhfjsdfoshfshf
+                           Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque ipsam sapiente dignissimos earum et vitae, blanditiis dolor deserunt tenetur harum nam debitis molestias, assumenda, voluptate est fugiat labore. Nostrum, repudiandae.
                             </Text>
                         </Stack>
                     </CardBody>
@@ -55,7 +53,7 @@ function About() {
                     </CardFooter>
                 </Card>
 
-                <Image
+                {/* <Image
                     display="flex"
                     src="logo.png"
                     width="250px"
@@ -63,14 +61,14 @@ function About() {
                     backgroundColor="teal"
                     borderRadius="50px"
                     mt="-100px"
-                ></Image>
+                ></Image> */}
 
                 <Card maxW="lg">
                     <CardBody>
                         <Stack mt="6" spacing="3">
                             <Heading size="md">Manuel Tavares</Heading>
                             <Text>
-                            sgujkhsdhjfghlgkhjlsdkfgjhsidghslkfhsdlkfhlksdhhuiöehwhfohfshfuhfioshfhfjsdfoshfshfsgujkhsdhjfghlgkhjlsdkfgjhsidghslkfhsdlkfhlksdhhuiöehwhfohfshfuhfioshfhfjsdfoshfshf
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla maiores est impedit! Incidunt distinctio modi, ea cum esse, laboriosam vero vitae alias ipsam ipsa consequatur in odit labore repudiandae sapiente?
                             </Text>
                         </Stack>
                     </CardBody>
