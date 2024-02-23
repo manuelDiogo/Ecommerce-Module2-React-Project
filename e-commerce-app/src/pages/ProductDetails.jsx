@@ -82,6 +82,11 @@ function ProductDetails() {
                                 <Text py='2' mt="50px" fontSize="2xl">
                                     {prodFind.description}
                                 </Text>
+                                {prodFind.review && (
+                                <Text>
+                                    Customer reviews:
+                                </Text>
+                                )}
 
                                 <UnorderedList mt="50px" fontSize="xl">
 
