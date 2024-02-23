@@ -17,33 +17,39 @@ export const CartProvider = (props) => {
         updatedBasket.push(product)
 
         updatePrice(updatedBasket)
+
         dispatch({
             type: "add",
             product: updatedBasket
         })
-        
+
     }
 
-    const removeFromBasket = (product) => {
+    const removeFromBasket = (index) => {
 
-        const updatedBasket = state.pro.filter((currValue) => 
-            currValue.id != product.id
-           
-        )
+        // const updatedBasket = state.pro.filter((currValue) => 
+        //     currValue.id != product.id
+
+        // )
+        const updatedBasket = [...state.pro];
+
+        updatedBasket.splice(index, 1);
 
         updatePrice(updatedBasket)
+
         dispatch({
             type: "remove",
             product: updatedBasket
         })
-        
     }
 
     const updatePrice = (product) => {
+        
         let total = 0
+        
         const updatedBasket = product.forEach((products) => {
             total += products.price
-           
+
         })
         console.log(total)
 
@@ -51,10 +57,10 @@ export const CartProvider = (props) => {
             type: "update price",
             product: total
         })
-        
+
     }
 
-    
+
 
     const value = { addToBasket, removeFromBasket, pro: state.pro, total: state.total }
 

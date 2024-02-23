@@ -10,7 +10,6 @@ import background from "../assets/background.png"
 
 function ShoppingCart() {
 
-
     const { pro, removeFromBasket, total } = useContext(CartContext)
 
     // console.log(total)
@@ -18,17 +17,18 @@ function ShoppingCart() {
     //console.log(pro)
 
     return (
-        <Box bgImage={background}  minHeight="100vh" pt="80px" pb="45px" width="100%" overflowY="scroll" >
+        <Box bg="#f4eae3" minHeight="100vh" pt="80px" pb="45px" width="100%" overflowY="scroll" >
             <Card position="fixed" width="100vw" fontSize='l' fontWeight='bold' zIndex="999" textAlign="center">
                 your total:
                 <Badge ml='1' colorScheme='teal' fontSize='2xl'>
-                    {total}€
+                {total.toFixed(2)}€
+                {/* {total}€ */}
+                
                 </Badge>
             </Card>
             <Flex flexWrap="wrap" justifyContent="flex-start" mt="70px" pl="60px">
-                {pro && pro.map((items) => {
+                {pro && pro.map((items, index) => {
                     return (
-
                         < Card
                             direction={{ base: 'column', sm: 'row' }}
                             maxW="400px"
@@ -36,12 +36,9 @@ function ShoppingCart() {
                             variant='outline'
                             mr="60px"
                             mb="10px"
-
-
                         >
                             <Image
                                 objectFit='cover'
-
                                 boxSize="200px"
                                 src={items.image}
                                 alt="image"
@@ -58,7 +55,7 @@ function ShoppingCart() {
 
 
                                 <CardFooter>
-                                    <Button onClick={() => removeFromBasket(items)} variant='solid' colorScheme='red'>
+                                    <Button onClick={ () => removeFromBasket(index)} variant='solid' colorScheme='red'>
                                         Remove from cart
                                     </Button>
                                 </CardFooter>
@@ -79,4 +76,4 @@ function ShoppingCart() {
 export default ShoppingCart
 
 
-// bg="#f4eae3"
+// bgImage={background} 

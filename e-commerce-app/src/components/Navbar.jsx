@@ -15,11 +15,13 @@ function Navbar() {
     const navigate = useNavigate()
     const [search, setSearch] = useState("")
     const { pro } = useContext(CartContext)
+
     const handleSubmit = (e) => {
         e.preventDefault()
         navigate({ pathname: "/search", search: `?searchedProducts=${search}` })
         setSearch("")
     }
+    
     return (
         <div>
             <Flex 

@@ -12,7 +12,7 @@ const API_URL = "http://localhost:3245"
 
 function ProductDetails() {
 
-    const [review, setReview] = useState("");
+    const [newReview, setReview] = useState("");
 
     const { addToBasket } = useContext(CartContext);
 
@@ -30,15 +30,19 @@ function ProductDetails() {
         e.preventDefault();
         let reviews;
         if (prodFind.review) {
-            typeof prodFind.review === "array" ? reviews = [...prodFind.review] : reviews = [prodFind.review];
-        } else {
+            //typeof prodFind.review === "array" ? 
+            reviews = [...prodFind.review] //: reviews = [prodFind.review];
+        }
+
+        else {
             reviews = [];
         }
-        reviews.push(review);
+        reviews.push(newReview);
 
         axios.put(`${API_URL}/products/${id}`, { ...prodFind, review: reviews }).then(() => {
             setTrigger(!trigger);
         })
+
         setReview("")
     }
 
@@ -79,7 +83,7 @@ function ProductDetails() {
                                     {prodFind.description}
                                 </Text>
 
-                                <UnorderedList mt="50px"fontSize="xl">
+                                <UnorderedList mt="50px" fontSize="xl">
 
                                     {prodFind.review && prodFind.review.map((one) => {
                                         return (
@@ -95,14 +99,15 @@ function ProductDetails() {
                             <Button onClick={() => addToBasket(prodFind)} variant='solid' leftIcon={<MdAddShoppingCart />} colorScheme='gray'>
                                 Add to cart
                             </Button>
-                            <form onSubmit={handleSubmitRev}>
+                            <form onSubmit={handleSubmitRev}  >
                                 <input
                                     type="text"
                                     required
-                                    value={review}
+                                    value={newReview}
                                     onChange={(e) => setReview(e.target.value)}
                                     placeholder="Enter review"
                                 />
+
                                 <button className="addRevBtn">Submit</button>
                             </form>
 
