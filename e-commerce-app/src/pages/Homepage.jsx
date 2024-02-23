@@ -8,9 +8,9 @@ import { Link } from "react-router-dom";
 
 
 
-// const API_URL = "https://reactprojectbackendservermodule2.onrender.com"
+const API_URL = "https://reactprojectbackendservermodule2.onrender.com"
 
-const API_URL = "http://localhost:3245"
+// const API_URL = "http://localhost:3245"
 
 function Homepage() {
 

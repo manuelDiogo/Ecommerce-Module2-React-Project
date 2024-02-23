@@ -31,6 +31,7 @@ useEffect(() => {
     }, 2000);
     return () => clearInterval(interval);
   }, [featuredDiscountedImages.length]);
+  
   return (
     <Box>
       <Box bg="teal" color="white" py={4} px={8}>

@@ -7,9 +7,9 @@ import { Box, Badge, Card, CardBody, Image, Stack, Heading, Text, Divider, CardF
 
 
 
-// const API_URL = "https://reactprojectbackendservermodule2.onrender.com "
+const API_URL = "https://reactprojectbackendservermodule2.onrender.com "
 
-const API_URL = "http://localhost:3245"
+// const API_URL = "http://localhost:3245"
 
 
 function SearchPage() {

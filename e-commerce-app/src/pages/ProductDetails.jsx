@@ -6,9 +6,9 @@ import { MdAddShoppingCart } from "react-icons/md"
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-// const API_URL = "https://reactprojectbackendservermodule2.onrender.com"
+const API_URL = "https://reactprojectbackendservermodule2.onrender.com"
 
-const API_URL = "http://localhost:3245"
+// const API_URL = "http://localhost:3245"
 
 function ProductDetails() {
 
