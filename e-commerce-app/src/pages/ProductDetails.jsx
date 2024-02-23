@@ -6,6 +6,8 @@ import { MdAddShoppingCart } from "react-icons/md"
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
+import '../App.css'
+
 const API_URL = "https://reactprojectbackendservermodule2.onrender.com"
 
 // const API_URL = "http://localhost:3245"
@@ -83,12 +85,11 @@ function ProductDetails() {
                                     {prodFind.description}
                                 </Text>
                                 {prodFind.review && (
-                                <Text>
-                                    Customer reviews:
-                                </Text>
+                                    <Text>
+                                        Customer reviews:
+                                    </Text>
                                 )}
-
-                                <UnorderedList mt="50px" fontSize="xl">
+                                <UnorderedList mt="10px" fontSize="xl">
 
                                     {prodFind.review && prodFind.review.map((one) => {
                                         return (
@@ -101,22 +102,9 @@ function ProductDetails() {
                                 </UnorderedList>
                             </CardBody>
 
-                            <Button onClick={() => addToBasket(prodFind)} variant='solid' leftIcon={<MdAddShoppingCart />} colorScheme='gray'>
+                            <Button mb="20px" onClick={() => addToBasket(prodFind)} variant='solid' leftIcon={<MdAddShoppingCart />} colorScheme='gray'>
                                 Add to cart
                             </Button>
-                            <form onSubmit={handleSubmitRev}  >
-                                <input
-                                    type="text"
-                                    required
-                                    value={newReview}
-                                    onChange={(e) => setReview(e.target.value)}
-                                    placeholder="Enter review"
-                                />
-
-                                <button className="addRevBtn">Submit</button>
-                            </form>
-
-
 
                             {/* <FormControl isInvalid={isError}>
                                 <FormLabel>Email</FormLabel>
@@ -130,10 +118,22 @@ function ProductDetails() {
                                 )}
                             </FormControl> */}
 
-                            <CardFooter>
-                                <Text fontSize="5xl">
+                            <CardFooter alignItems="center" >
+                                <Text fontSize="5xl" mr="150px">
                                     {prodFind.price}€
                                 </Text>
+                                <form onSubmit={handleSubmitRev}  >
+                                    <input
+                                        type="text"
+                                        required
+                                        value={newReview}
+                                        onChange={(e) => setReview(e.target.value)}
+                                        placeholder="Enter review"
+                                    />
+
+                                    <button className="submitButton" >Submit</button>
+
+                                </form>
                             </CardFooter>
                         </Stack>
                     </Card>

@@ -46,3 +46,11 @@
 .app {
   background-color: blue;
 }
+
+.submitButton {
+  background-color: green;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 15%;
+  margin-left: 10px;
+}
